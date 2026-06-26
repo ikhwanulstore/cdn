@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dappa CDN - Upload & Share File</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1><i class="fas fa-cloud-upload-alt"></i> Dappa CDN</h1>
+            <p>Upload & bagikan file instan · Maks 500MB</p>
+        </header>
+
+        <!-- Drop Zone -->
+        <div class="drop-zone" id="dropZone">
+            <div class="drop-zone-icon">
+                <i class="fas fa-folder-open"></i>
+            </div>
+            <p class="drop-zone-text">
+                Seret & lepas file di sini atau <span class="browse-link">pilih file</span>
+            </p>
+            <small class="file-types">Gambar · Video · Audio · Dokumen · ZIP · APK · dll.</small>
+            <input type="file" id="fileInput" hidden multiple />
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progressContainer" style="display:none;">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0%</span>
+        </div>
+
+        <!-- File Info -->
+        <div class="file-info" id="fileInfo" style="display:none;">
+            <div class="file-icon">
+                <i class="fas fa-file"></i>
+            </div>
+            <div class="file-details">
+                <span class="file-name" id="fileName">nama_file.pdf</span>
+                <span class="file-size" id="fileSize">2.5 MB</span>
+            </div>
+            <button class="btn-upload" id="uploadBtn">
+                <i class="fas fa-upload"></i> Upload
+            </button>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage" style="display:none;">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>✅ Berhasil diunggah!</h3>
+            <p>Link file: <span id="fileLink" class="file-link"></span></p>
+            <button class="btn-copy" id="copyBtn">
+                <i class="fas fa-copy"></i> Salin Link
+            </button>
+            <button class="btn-reset" id="resetBtn">
+                <i class="fas fa-upload"></i> Upload Lagi
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
